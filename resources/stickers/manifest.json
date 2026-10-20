@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "stickers": [
+    {
+      "id": "happy",
+      "file": "happy.png",
+      "label": "好耶",
+      "tags": [
+        "开心",
+        "夸奖",
+        "成功"
+      ],
+      "description": "开心、夸奖、成功"
+    },
+    {
+      "id": "hug",
+      "file": "hug.png",
+      "label": "抱抱",
+      "tags": [
+        "难过",
+        "疲惫",
+        "需要安慰"
+      ],
+      "description": "难过、疲惫、需要安慰"
+    },
+    {
+      "id": "speechless",
+      "file": "speechless.png",
+      "label": "……",
+      "tags": [
+        "无语",
+        "被逗笑",
+        "轻微吐槽"
+      ],
+      "description": "无语、被逗笑、轻微吐槽"
+    },
+    {
+      "id": "night",
+      "file": "night.png",
+      "label": "晚安",
+      "tags": [
+        "晚上",
+        "结束对话"
+      ],
+      "description": "晚上、结束对话"
+    },
+    {
+      "id": "cheer",
+      "file": "cheer.png",
+      "label": "加油",
+      "tags": [
+        "鼓励",
+        "工作推进"
+      ],
+      "description": "鼓励、工作推进"
+    },
+    {
+      "id": "shy",
+      "file": "shy.png",
+      "label": "嘿嘿",
+      "tags": [
+        "被夸",
+        "害羞"
+      ],
+      "description": "被夸、害羞"
+    },
+    {
+      "id": "think",
+      "file": "think.png",
+      "label": "让我想想",
+      "tags": [
+        "思考",
+        "查证"
+      ],
+      "description": "思考、查证"
+    },
+    {
+      "id": "ok",
+      "file": "ok.png",
+      "label": "OK",
+      "tags": [
+        "确认",
+        "答应"
+      ],
+      "description": "确认、答应"
+    }
+  ]
+}

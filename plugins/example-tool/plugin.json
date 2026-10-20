@@ -1,0 +1,11 @@
+{
+  "id": "example-tool",
+  "name": "示例插件 · 项目状态",
+  "version": "0.1.0",
+  "description": "演示如何通过插件口注册工具。默认不启用，复制此目录即可开发自己的插件。",
+  "entry": "index.js",
+  "builtin": false,
+  "permissions": ["memory:read"],
+  "hooks": [],
+  "author": "Banxing"
+}

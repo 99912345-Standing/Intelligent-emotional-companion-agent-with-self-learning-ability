@@ -1,0 +1,11 @@
+{
+  "id": "hermes",
+  "name": "Hermes 长期记忆与成长",
+  "version": "1.1.0",
+  "description": "内置长期记忆插件：分层召回、受控写入、稳定/情感记忆区分、三线成长反思。所有写入保留来源与时间。",
+  "entry": "index.js",
+  "builtin": true,
+  "permissions": ["memory:read", "memory:write", "weights:read"],
+  "hooks": ["onStartup", "onUserMessage"],
+  "author": "Banxing"
+}

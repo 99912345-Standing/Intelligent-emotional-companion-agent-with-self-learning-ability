@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: banxing-media:; media-src 'self' data: banxing-media:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>伴行 · 陪伴工作型 Agent</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="topbar-title" id="topbar-title">首页</div>
+      <div class="topbar-sub" id="topbar-sub">工作、陪伴与学习，三个维度同时在场</div>
+      <div class="topbar-actions no-drag">
+        <button class="chip chip-quiet" id="check-button" data-action="run-check" title="运行内置只读检查">
+          <span class="dot dot-idle"></span><span>只读检查</span>
+        </button>
+        <button class="chip chip-quiet" data-action="open-workspace" title="打开工作目录">
+          <span class="chip-icon" data-icon="folder"></span><span>工作目录</span>
+        </button>
+        <div class="model-chip" id="model-chip"><span class="dot dot-idle"></span><span>模型待接入</span></div>
+      </div>
+    </header>
+
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span class="brand-orbit orbit-a"></span>
+            <span class="brand-orbit orbit-b"></span>
+            <span class="brand-core"></span>
+          </div>
+          <div class="brand-text">
+            <strong>伴行</strong>
+            <span>BANXING AGENT</span>
+          </div>
+        </div>
+
+        <nav class="nav" id="nav"></nav>
+
+        <div class="sidebar-foot">
+          <div class="mini-weights" id="mini-weights">
+            <div class="mini-label"><span>三线状态</span><span id="mini-mode">三线并行</span></div>
+            <div class="mini-bars">
+              <span class="mini-work" id="mini-work-bar"></span>
+              <span class="mini-companion" id="mini-companion-bar"></span>
+              <span class="mini-learning" id="mini-learning-bar"></span>
+            </div>
+            <div class="mini-legend"><span><i class="swatch work"></i>工 <b id="mini-work">35%</b></span><span><i class="swatch companion"></i>伴 <b id="mini-companion">45%</b></span><span><i class="swatch learning"></i>学 <b id="mini-learning">20%</b></span></div>
+          </div>
+          <div class="sidebar-note"><span class="pulse"></span>本地运行 · 数据留在工作目录</div>
+          <div class="sidebar-version" id="sidebar-version">v1.0.0</div>
+        </div>
+      </aside>
+
+      <main class="main" id="main" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div class="boot" id="boot">
+    <div class="boot-mark">
+      <span class="brand-orbit orbit-a"></span>
+      <span class="brand-orbit orbit-b"></span>
+      <span class="brand-core"></span>
+    </div>
+    <h1>伴行</h1>
+    <p id="boot-text">正在整理记忆与三线状态…</p>
+    <div class="boot-track"><span></span></div>
+    <small>所有数据保存在本工作目录 · 不自动上传</small>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <div class="modal-root" id="modal-root"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
