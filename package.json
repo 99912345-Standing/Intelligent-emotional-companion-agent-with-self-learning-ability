@@ -1,0 +1,103 @@
+{
+  "name": "banxing-companion-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "伴行 · 陪伴工作型 Agent — 分层记忆、连续权重、QQ 桥接与手机 MCP",
+  "type": "module",
+  "main": "src/main/main.js",
+  "author": "Banxing",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "check": "node scripts/selftest.mjs",
+    "build:mcp": "node scripts/build-mcp.mjs",
+    "build": "npm run build:mcp && electron-builder --win portable --x64",
+    "build:dir": "npm run build:mcp && electron-builder --win dir --x64",
+    "postinstall": "node scripts/postinstall.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@snowluma/sdk": "^1.14.22",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "electron": "44.9.0",
+    "electron-builder": "26.15.3",
+    "esbuild": "^0.25.12",
+    "ws": "^8.22.0"
+  },
+  "build": {
+    "appId": "com.banxing.companion",
+    "productName": "伴行Agent",
+    "artifactName": "伴行Agent-${version}-${arch}-portable.${ext}",
+    "asar": true,
+    "compression": "normal",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "mcp/**/*",
+      "plugins/**/*",
+      "build/icon.png",
+      "package.json",
+      "!**/*.map",
+      "!node_modules/.cache/**"
+    ],
+    "extraResources": [
+      {
+        "from": "resources",
+        "to": "resources"
+      },
+      {
+        "from": "vendor",
+        "to": "vendor"
+      },
+      {
+        "from": "mcp",
+        "to": "mcp"
+      },
+      {
+        "from": "plugins",
+        "to": "plugins"
+      },
+      {
+        "from": "tools/platform-tools",
+        "to": "tools/platform-tools"
+      },
+      {
+        "from": "src/shared",
+        "to": "src/shared"
+      },
+      {
+        "from": "scripts/check-readonly.bat",
+        "to": "check/check-readonly.bat"
+      },
+      {
+        "from": "scripts/check-readonly.ps1",
+        "to": "check/check-readonly.ps1"
+      },
+      {
+        "from": "docs",
+        "to": "docs"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "portable": {
+      "artifactName": "伴行Agent-${version}-portable.${ext}"
+    }
+  }
+}
